@@ -32,7 +32,7 @@
   <p align="center">
     English Project Code for Police Shootings
     <br />
-    <a href="https://github.com/km322Police-Shootings"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/km322/Police-Shootings"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/km322/Police-Shootings">View Demo</a>
