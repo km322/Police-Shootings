@@ -24,7 +24,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/km322/Police-Shootings">
-    <img src="https://pbs.twimg.com/profile_images/822120897255325696/xbs-dM7Z_400x400.jpg" alt="Logo" width="80" height="80">
+    <img src="https://media.istockphoto.com/vectors/clenched-fists-held-high-vector-id1250323466?k=20&m=1250323466&s=612x612&w=0&h=wSjNhjvrAU3V3fFvjrGVHASvv2P3yd8Ox7MbtYU8ykU=" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Police Shootings Data Exploration Code</h3>
