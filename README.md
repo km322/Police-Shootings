@@ -24,8 +24,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/km322/Police-Shootings">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fillustrations%2Fanti-racism&psig=AOvVaw28YS63DDgiBRwgxvWpFOhO&ust=1664085880130000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCICIu5HhrPoCFQAAAAAdAAAAABAD![image](https://user-images.githubusercontent.com/76541886/192082735-5945836a-620a-446d-ad84-d53d43778c7b.png)
-" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/76541886/192082735-5945836a-620a-446d-ad84-d53d43778c7b.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Police Shootings Data Exploration Code</h3>
