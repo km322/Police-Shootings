@@ -16,6 +16,22 @@ shooting_data <- read_csv("shootings.csv")
 attach(shooting_data)
 ```
 ```{r}
+print(sum(shooting_data$gender == 'F')/nrow(shooting_data))
+print(sum(shooting_data$signs_of_mental_illness == 'TRUE')/nrow(shooting_data))
+print(sum(shooting_data$body_camera == 'TRUE')/nrow(shooting_data))
+```
+Around 95% of the people shot by the police are male and around 5% of the people shot were female. Around 23% of people killed had a mental illness while 77% didn't. Around 12% of the cases had body cameras involved while 88% didn't. 
+
+```{r}
+number_ticks <- function(n) {function(limits) pretty(limits, n)}
+ggplot(shooting_data, aes(x = factor(age), fill = race)) + 
+  geom_histogram(aes(y = ..count..), stat = "count") +
+  scale_x_discrete(breaks = number_ticks(25)) +
+  labs(title = "People's Age when Killed", y = "percentage", fill = "Race", x = "Age")
+```
+As you can see police killings usually occurs from ages 25 to 40. 
+
+```{r}
 state_data <- 
   shooting_data %>% 
   mutate(state = case_when(
@@ -33,6 +49,7 @@ ggplot(state_data, aes(x = factor(state), fill = race)) +
   labs(title = "The Number of Police Killings by State Region described by Race", y = "percentage", fill = "Race", x = "State Regions")
        
 ```
+We can see the distrubitions of police shootings per region and the distribution of race within that. 
 
 ```{r}
 ggplot(state_data, aes(x = factor(race), fill = race)) + 
@@ -42,6 +59,7 @@ ggplot(state_data, aes(x = factor(race), fill = race)) +
   scale_y_continuous(labels=scales::percent) + 
   labs(title = "Number of Police Killings by Race in Percent", y = "percentage", fill = "Race", x = "Race")
 ```
+We can see the police killings by Race. 
 ```{r}
 gov_site <- data.frame(
     race = c("Asian", "Black", "Hispanic", "Native", "Other", "White"),
@@ -54,12 +72,27 @@ ggplot(gov_site, aes(x = factor(race), fill = race)) +
   scale_y_continuous(labels=scales::percent) + 
   labs(title = "Percent of People in America", y = "percentage", fill = "Race", x = "Race")
 ```
+We can see the percent of races in America. 
+We can see how certain races have a higher or lower chance of being killed by the police.
+
+Since the Montana 1948 focuses on racism on Native Americans, here is my data analysis on it. 
+```{r}
+native_data <- 
+  subset(state_data, race=="Native")
+native_data <- 
+  native_data %>% 
+  mutate(arms_category = case_when(
+    arms_category == "Unarmed" ~"Unarmed",
+    arms_category != "Unarmed" ~ "Weapon or Unknown"
+  ))
+ggplot(native_data, aes(x = arms_category, fill = flee)) + 
+  geom_bar(aes(y = ((..count..)/sum(..count..))), stat = "count") +
+  scale_y_continuous(labels=scales::percent) + 
+  labs(title = "Percent of Native Americans that were Killed based on whether the person \n was Armed or Fleeing", y = "percentage", fill = "How the Person Fled", x = "Armed or Not")
+```
+As you can see most of the police shootings against Native Americans were justified, however, there were a few that weren't. 
+
 ```{r}
 
 ```
-
-
-
-
-
 
