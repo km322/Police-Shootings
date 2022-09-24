@@ -1,0 +1,25 @@
+---
+title: "US Police Shootings"
+author: "Ketan Mittal"
+date: "`r Sys.Date()`"
+output: html_document
+--- 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+shooting_data <- read_csv("shootings.csv")
+attach(shooting_data)
+```
+```{r}
+ggplot(data = shooting_data, aes(x =as.factor(race), fill = as.factor(state))) + 
+  geom_bar() + labs(y = "count", x = "race")
+       
+```
+
+
+
