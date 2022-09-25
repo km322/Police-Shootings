@@ -93,6 +93,12 @@ ggplot(native_data, aes(x = arms_category, fill = flee)) +
 As you can see most of the police shootings against Native Americans were justified, however, there were a few that weren't. 
 
 ```{r}
-
+years <- as.character(format(shooting_data$date, "%Y"))
+yValues <- c(sum(years == "2015"), sum(years == "2016"), sum(years == "2017"), sum(years == "2018"), sum(years == "2019"))
+xValues <- 0:4
+date <- data.frame(xValues, yValues)
+ggplot(date, aes(x=xValues, y=yValues)) +
+  geom_line(color = "steelblue", size=2, alpha=0.75, linetype=7) + 
+  labs(title = "Number of Police Killings from 2015 to 2019", x = "Years from 2015", y = "Number of Police Killings")
 ```
-
+From 2015 to 2019 the number of police killings decrease. 
